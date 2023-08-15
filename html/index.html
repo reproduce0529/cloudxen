@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudXen - 클라우드의 새로운</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <!-- 햄버거 바 -->
+      <div class="menu">
+        <ul class="menu-list">
+          <li><a href="#">홈</a></li>
+          <li><a href="#">회사소개</a></li>
+          <li class="has-item">
+            <a href="#">요금제</a>
+            <button onclick="clickBtn1()"><i class="fa-solid fa-chevron-down" id="btn1" style="font-size: 20px; line-height: 50px;"></i></button>
+            <ul class="close-item" id="item1">
+              <li class="container">
+                <div class="container-box">
+                  <div class="container-layer-in1">
+                    <div class="container-layer1-item">
+                      <div class="container-layer1-item-wrap">
+                        <div class="container-layer1-title">가상서버 VPS</div>
+                        <div class="container-layer1-links">
+                          <div class="container-layer1-link">Standard</div>
+                          <div class="container-layer1-link">Highend</div>
+                          <div class="container-layer1-link">Dedicated</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-layer1-item">
+                      <div class="container-layer1-item-wrap">
+                        <div class="container-layer1-title">데이터센터</div>
+                        <div class="container-layer1-links">
+      
+                          <div class="container-layer1-link">도곡센터</div>
+                          <div class="container-layer1-link">안동센터</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-layer1-item">
+                      <div class="container-layer1-item-wrap" style="border: none">
+      
+                        <div class="container-layer1-title">네트워크</div>
+                        <div class="container-layer1-links">
+      
+                          <div class="container-layer1-link">디도스 방어</div>
+                          <div class="container-layer1-link">코로케이션</div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">고객센터</a></li>
+          <li class="has-item">
+            <a href="#">더보기</a>
+            <button onclick="clickBtn2()"><i class="fa-solid fa-chevron-down" id="btn2" style="font-size: 20px; line-height: 50px;"></i></button>
+            <ul class="close-item" id="item2">
+              <li class="container">
+                <div class="container-box">
+                  <div class="container-layer-in2">
+                    <div class="container-layer2-item">
+                      <div class="container-layer2-item-wrap">
+                        <img class="container-layer2-img" src="../source/img/discord.png" />
+                        <div class="container-layer2-text">디스코드</div>
+                      </div>
+                    </div>
+                    <div class="container-layer2-item">
+                      <div class="container-layer2-item-wrap">
+                        <img class="container-layer2-img" src="../source/img/nu.png" />
+                        <div class="container-layer2-text">넥스트유니콘</div>
+                      </div>
+                    </div>
+                    <div class="container-layer2-item">
+                      <div class="container-layer2-item-wrap" style="border: none;">
+                        <img class="container-layer2-img" src="../source/img/nu.png" />
+                        <div class="container-layer2-text">파트너스</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="wrap" id="header-wrap">
+        <div class="inner">
+          <div class="header-inner-in">
+            <div class="header-logo">
+              <img
+                src="../source/img/logo.png"
+                class="full-header-logo-img"
+                alt=""
+              />
+              <img
+                src="../source/img/mobilelogo.png"
+                class="small-header-logo-img"
+                alt=""
+              />
+            </div>
+
+            <div class="header-link">
+              <a href="#" class="link-tag">홈</a>
+              <a href="#" class="link-tag">회사소개</a>
+              <a href="#" class="link-tag" id="open_layer_1"
+                >서비스 <i class="fa-solid fa-chevron-down icon-gray"></i
+              ></a>
+              <a href="#" class="link-tag">고객센터</a>
+              <a href="#" class="link-tag" id="open_layer_2"
+                >더보기 <i class="fa-solid fa-chevron-down icon-gray"></i
+              ></a>
+            </div>
+
+            <div class="header-loginLink">
+              <a href="#" class="link-tag login-link"
+                ><i class="fa-solid fa-arrow-right-to-bracket"></i> 로그인</a
+              >
+              <button type="button" onclick="clickHamburger();" class="header-hamburger"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <!-- layer 1 -->
+            <div class="header-layer-in1" id="layer1">
+              <div class="header-layer1-item">
+                <div class="header-layer1-item-wrap">
+                  <div class="header-layer1-title">가상서버 VPS</div>
+                  <div class="header-layer1-links">
+                    <div class="header-layer1-link">Standard</div>
+                    <div class="header-layer1-link">Highend</div>
+                    <div class="header-layer1-link">Dedicated</div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-layer1-item">
+                <div class="header-layer1-item-wrap">
+                  <div class="header-layer1-title">데이터센터</div>
+                  <div class="header-layer1-links">
+
+                    <div class="header-layer1-link">도곡센터</div>
+                    <div class="header-layer1-link">안동센터</div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-layer1-item">
+                <div class="header-layer1-item-wrap" style="border: none">
+
+                  <div class="header-layer1-title">네트워크</div>
+                  <div class="header-layer1-links">
+
+                    <div class="header-layer1-link">디도스 방어</div>
+                    <div class="header-layer1-link">코로케이션</div>
+                  </div>
+                </div>
+            </div>
+          </div>
+            <!-- layer 2 -->
+            <div class="header-layer-in2" id="layer2">
+              <div class="header-layer2-item">
+                <div class="header-layer2-item-wrap">
+                  <img class="header-layer2-img" src="../source/img/discord.png" />
+                  <div class="header-layer2-text">디스코드</div>
+                </div>
+              </div>
+              <div class="header-layer2-item">
+                <div class="header-layer2-item-wrap">
+                  <img class="header-layer2-img" src="../source/img/nu.png" />
+                  <div class="header-layer2-text">넥스트유니콘</div>
+                </div>
+              </div>
+              <div class="header-layer2-item">
+                <div class="header-layer2-item-wrap" style="border: none;">
+                  <img class="header-layer2-img" src="../source/img/nu.png" />
+                  <div class="header-layer2-text">파트너스</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </header>
+
+    <div class="typing-txt">
+      <ul>
+        <li>개발자가</li>
+        <li></li>
+      </ul>
+    </div>
+
+    <section class="section" id="fir-sec">
+      <div class="wrap">
+        <div class="inner">
+          <div class="typograp-textBox">
+            <h1 class="typograp-title">
+              CloudXen은..
+              <p class="undeline">
+                <p class="typing"></p><span class="typo-bar">|</span> <strong>함께</strong>합니다
+              </p>
+            </h1>
+            <div class="typograp-subtitle">
+              클라우드의 새로운 중심점, CloudXen
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sec-sec">
+      <div class="wrap">
+        <div class="inner">
+          <div class="service-textBox">
+            <h1 class="title">
+              <strong>최고의 서비스</strong>를 위해 노력합니다
+            </h1>
+            <span class="subTitle"
+              >클라우드의 새로운 중심점을 위한 새로운 도전, CloudXen</span
+            >
+          </div>
+
+          <div class="service-list">
+            <div class="service">
+                <i class="fa-solid fa-laptop service-icon"></i>
+                <h1 class="service-title">DDoS 방어 호스팅</h1>
+                <p class="service-info">최대 12Tbps 디도스 방어<br />호스팅을 제공합니다</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-school service-icon"></i>
+                <h1 class="service-title">빠른 속도 호스팅</h1>
+                <p class="service-info">빠른 속도를 자랑하는<br />호스팅을 제공합니다</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-ship service-icon"></i>
+                <h1 class="service-title">365일 고객센터</h1>
+                <p class="service-info">365일 하루도 쉬지않고<br />고객지원을 도와드립니다.</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-truck service-icon"></i>
+                <h1 class="service-title">저렴한 가격</h1>
+                <p class="service-info">거품없는 가격으로<br />모시겠습니다.</p>
+            </div>
+            
+          </div>
+          <div class="service-swiper">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                  <div class="service">
+                    <i class="fa-solid fa-laptop service-icon"></i>
+                    <h1 class="service-title">DDoS 방어 호스팅</h1>
+                    <p class="service-info">최대 12Tbps 디도스 방어<br />호스팅을 제공합니다</p>
+                  </div>
+                </div>
+                
+                <div class="swiper-slide">
+                  <div class="service">
+                    <i class="fa-solid fa-school service-icon"></i>
+                    <h1 class="service-title">빠른 속도 호스팅</h1>
+                    <p class="service-info">빠른 속도를 자랑하는<br />호스팅을 제공합니다</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="service">
+                    <i class="fa-solid fa-ship service-icon"></i>
+                    <h1 class="service-title">365일 고객센터</h1>
+                    <p class="service-info">365일 하루도 쉬지않고<br />고객지원을 도와드립니다.</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="service">
+                    <i class="fa-solid fa-truck service-icon"></i>
+                    <h1 class="service-title">저렴한 가격</h1>
+                    <p class="service-info">거품없는 가격으로<br />모시겠습니다.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="third-sec">
+      <div class="wrap">
+        <div class="inner">
+          <div class="plan-textBox" data-aos="fade-up">
+            <h1 class="title">
+              나를 위한 <strong>다양한</strong> 플랜을 만나보세요
+            </h1>
+            <span class="subTitle"
+              >더욱 더 다양한 플랜을 만들기 위해 노력합니다, CloudXen</span
+            >
+          </div>
+
+          <div class="plan-list" data-aos="fade-up">
+            <div class="plan">
+              <p class="plan-name">ST-Basic</p>
+              <p class="plan-price">12,000 KRW<span>/mo</span></p>
+              <div class="plan-services">
+                <p>제공 서비스</p>
+                <p class="plan-service">E5 2680v4 Dual</p>
+                <p class="plan-service">DDR4 2400 4GB</p>
+                <p class="plan-service">Traffic 200GB</p>
+                <p class="plan-service">30GB Storage</p>
+              </div>
+            </div>
+            <div class="plan">
+              <p class="plan-name">ST-Basic</p>
+              <p class="plan-price">12,000 KRW<span>/mo</span></p>
+              <div class="plan-services">
+                <p>제공 서비스</p>
+                <p class="plan-service">E5 2680v4 Dual</p>
+                <p class="plan-service">DDR4 2400 4GB</p>
+                <p class="plan-service">Traffic 200GB</p>
+                <p class="plan-service">30GB Storage</p>
+              </div>
+            </div>
+            <div class="plan">
+              <p class="plan-name">ST-Basic</p>
+              <p class="plan-price">12,000 KRW<span>/mo</span></p>
+              <div class="plan-services">
+                <p>제공 서비스</p>
+                <p class="plan-service">E5 2680v4 Dual</p>
+                <p class="plan-service">DDR4 2400 4GB</p>
+                <p class="plan-service">Traffic 200GB</p>
+                <p class="plan-service">30GB Storage</p>
+              </div>
+            </div>
+            <div class="plan">
+              <p class="plan-name">ST-Basic</p>
+              <p class="plan-price">12,000 KRW<span>/mo</span></p>
+              <div class="plan-services">
+                <p>제공 서비스</p>
+                <p class="plan-service">E5 2680v4 Dual</p>
+                <p class="plan-service">DDR4 2400 4GB</p>
+                <p class="plan-service">Traffic 200GB</p>
+                <p class="plan-service">30GB Storage</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-swiper">
+            <div class="view-swiper">
+
+              <div class="swiper-plan">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="plan">
+                      <p class="plan-name">ST-Basic</p>
+                      <p class="plan-price">12,000 KRW<span>/mo</span></p>
+                      <div class="plan-services">
+                        <p>제공 서비스</p>
+                        <p class="plan-service">E5 2680v4 Dual</p>
+                        <p class="plan-service">DDR4 2400 4GB</p>
+                        <p class="plan-service">Traffic 200GB</p>
+                        <p class="plan-service">30GB Storage</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="plan">
+                      <p class="plan-name">ST-Basic</p>
+                      <p class="plan-price">12,000 KRW<span>/mo</span></p>
+                      <div class="plan-services">
+                        <p>제공 서비스</p>
+                        <p class="plan-service">E5 2680v4 Dual</p>
+                        <p class="plan-service">DDR4 2400 4GB</p>
+                        <p class="plan-service">Traffic 200GB</p>
+                        <p class="plan-service">30GB Storage</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="plan">
+                      <p class="plan-name">ST-Basic</p>
+                      <p class="plan-price">12,000 KRW<span>/mo</span></p>
+                      <div class="plan-services">
+                        <p>제공 서비스</p>
+                        <p class="plan-service">E5 2680v4 Dual</p>
+                        <p class="plan-service">DDR4 2400 4GB</p>
+                        <p class="plan-service">Traffic 200GB</p>
+                        <p class="plan-service">30GB Storage</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="plan">
+                      <p class="plan-name">ST-Basic</p>
+                      <p class="plan-price">12,000 KRW<span>/mo</span></p>
+                      <div class="plan-services">
+                        <p>제공 서비스</p>
+                        <p class="plan-service">E5 2680v4 Dual</p>
+                        <p class="plan-service">DDR4 2400 4GB</p>
+                        <p class="plan-service">Traffic 200GB</p>
+                        <p class="plan-service">30GB Storage</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fourth-sec">
+      <div class="wrap">
+        <div class="inner">
+          <div class="enterprise-textBox" data-aos="fade-up">
+            <h1 class="title">CloudXen <strong>서비스 인프라</strong></h1>
+            <span class="subTitle"
+              >10개 넘는 업체들이 저희와 함께 합니다, CloudXen
+            </span>
+          </div>
+          <div class="enterprise-list" data-aos="fade-up">
+            <div class="enterprise"><img
+                class="enterprise-img"
+                src="../source/img/kinx.png"
+                alt="kinx"
+              /></div>
+            <div class="enterprise"><img
+                class="enterprise-img"
+                src="../source/img/mkcloud.png"
+                alt="mkcloud"
+              /></div>
+            <div class="enterprise">
+              <img
+                class="enterprise-img"
+                src="../source/img/intel.png"
+                alt="intel"
+              />
+            </div>
+            <div class="enterprise">
+              <img
+                class="enterprise-img"
+                src="../source/img/codemos.png"
+                alt="codemos"
+              />
+            </div>
+            <div class="enterprise">
+              <img
+                class="enterprise-img"
+                src="../source/img/hynix.png"
+                alt="hynix"
+              />
+            </div>
+            <div class="enterprise">
+              <img
+                class="enterprise-img"
+                src="../source/img/kioxia.png"
+                alt="kioxia"
+              />
+            </div>
+            <div class="enterprise">
+              <img
+                class="enterprise-img"
+                src="../source/img/hpe.png"
+                alt="hpe"
+              />
+            </div>
+            <div class="enterprise">
+              <img
+                class="enterprise-img"
+                src="../source/img/cloudflare.png"
+                alt="cloudflare"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fifth-sec">
+      <div class="wrap">
+        <div class="inner">
+          <div class="ddos-textBox" data-aos="fade-up">
+            <h1 class="title">
+                전세계 <strong>DDoS 공격량</strong>
+              </h1>
+              <span class="subTitle"
+                >DDoS 방어를 위해 최선을 다하겠습니다, CloudXen </span
+              >
+          </div>
+          <div class="ddos-iframe" data-aos="fade-up">
+            <iframe src=""></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sixth-sec">
+        <div class="wrap">
+          <div class="inner">
+            <div class="sixth-inner">
+              <div class="full-link" data-aos="fade-up">
+                <img class="sixth-img" src="../source/img/mkcloud.png" alt="MK Cloud"/>
+                <h1 class="sixth-text"><strong>MK Cloud</strong>와<br /> 함께합니다</h1>
+                <div class="sixth-info">
+                  <p>디도스 방어 대신,<br/>가성비 호스팅을 원하세요?</p>z
+                  <a href="#">바로가기</a>
+                </div>
+              </div>
+              <div class="small-link" data-aos="fade-up">
+                <div class="link-container">
+                  <img class="sixth-img" src="../source/img/mkcloud.png" alt="MK Cloud"/>
+                  <h1 class="sixth-text"><strong>MK Cloud</strong>와<br /> 함께합니다</h1>
+                </div>
+                <div class="sixth-info">
+                  <p>디도스 방어 대신,<br/>가성비 호스팅을 원하세요?</p>z
+                  <a href="#">바로가기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="seventh-sec">
+        <div class="wrap">
+          <div class="inner">
+            <div class="review-textBox" data-aos="fade-up">
+              <h1 class="title">
+                <strong>확실한</strong> 고객분들의 후기
+                </h1>
+                <span class="subTitle"
+                  >거짓 없는 진실 100% 후기들을 공개합니다, CloudXen</span
+                >
+            </div>
+            <div class="full-review-list" data-aos="fade-up">
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+            </div>
+
+            <div class="small-review-list" data-aos="fade-up">
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+              <div class="review">
+                <div class="review-text">대충 이 클라우드 엄청나요!</div>
+                <p class="reviewer">-홍길동(님)-</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="footer">
+        <div class="footer-main">
+            <img class="footer-logo" src="../source/img/logo.png" alt="logo" />
+            <div class="footer-info">
+                <p>상호명: 온호스트</p>
+                <p>대표자명: 백승훈</p>
+                <p>사업자등록번호: 108-61-15093</p>
+            </div>
+        </div>
+        <div class="footer-sub">
+            <div class="footer-wrap">
+                <span>Copyright 2023 - CloudXen</span>
+                <div>
+                    <span class="turms">이용약관</span>
+                    <span>개인정보처리방침</span>
+                </div>
+            </div>
+        </div>
+      </footer>
+
+      <!-- 스크롤 이밴트 -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+
+      <!-- 호버 이밴트 -->
+      <script>
+        const btn1 = document.getElementById("open_layer_1")
+        const btn2 = document.getElementById("open_layer_2")
+
+        const layer1 = document.getElementById("layer1")
+        const layer2 = document.getElementById("layer2")
+
+
+        $(btn1).hover(function() {
+          $(layer1).css("display", "flex")
+        }, function() {
+          $(layer1).css("display", "none")
+        });
+
+        $(layer1).hover(function() {
+          $(layer1).css("display", "flex")
+        }, function() {
+          $(layer1).css("display", "none")
+        });
+
+        $(btn2).hover(function() {
+          $(layer2).css("display", "flex")
+        }, function() {
+          $(layer2).css("display", "none")
+        });
+
+        $(layer2).hover(function() {
+          $(layer2).css("display", "flex")
+        }, function() {
+          $(layer2).css("display", "none")
+        });
+
+
+      </script>
+
+      <!-- swiper -->
+      <script>
+        new Swiper(".swiper", {
+          loop: true,
+          slidesPerView: 1,
+          spaceBetween: 10,
+          centeredSlides: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+
+        new Swiper(".swiper-plan", {
+          loop: true,
+          slidesPerView: 1,
+          spaceBetween: 30,
+          centeredSlides: true,
+          navigation: {
+            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+          },
+        });
+      </script>
+  </body>
+</html>
